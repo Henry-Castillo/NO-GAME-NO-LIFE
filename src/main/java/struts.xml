@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.mapper.action.prefix.enabled"
+		value="true" />
+
+
+	<package name="dawi" namespace="/"
+		extends="struts-default, json-default">
+
+		<result-types>
+			<result-type name="jasper"
+				class="org.apache.struts2.views.jasperreports.JasperReportsResult"></result-type>
+		</result-types>
+
+		<action name="reporteGrafico" method="reporteGrafico"
+			class="action.ProductoAction">
+			<result name="ok" type="jasper">
+				<param name="location">/reportes/reportpro.jasper</param>
+				<param name="dataSource">lstGrafico</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+		<action name="reporteGrafico2" method="reporteGrafico2"
+			class="action.ProductoAction">
+			<result name="ok" type="jasper">
+				<param name="location">/reportes/reportGrafico.jasper</param>
+				<param name="dataSource">lstReporteGrafico</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="ingreso" method="login"
+			class="action.UsuarioAction">
+			<result name="ok">/principal.jsp</result>
+			<result name="ok2">/administrador.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="reg" method="registrar"
+			class="action.UsuarioAction">
+			<result name="ok">/registrarUsuario.jsp</result>
+		</action>
+
+		<action name="lstPro" method="ListadoProducto"
+			class="action.ProductoAction">
+			<result name="ok">/principal.jsp</result>
+		</action>
+
+		<action name="lstCar" method="ListadoCarreras"
+			class="action.ProductoAction">
+			<result name="ok">/carreras.jsp</result>
+		</action>
+		<action name="lstGue" method="ListadoGuerra"
+			class="action.ProductoAction">
+			<result name="ok">/guerra.jsp</result>
+		</action>
+		<action name="lstFan" method="ListadoFantasia"
+			class="action.ProductoAction">
+			<result name="ok">/fantasia.jsp</result>
+		</action>
+		<action name="lstFut" method="ListadoFutbol"
+			class="action.ProductoAction">
+			<result name="ok">/futbol.jsp</result>
+		</action>
+
+		<action name="llenacombo" method="generaListado"
+			class="action.ProductoAction">
+			<result name="ok" type="json"></result>
+		</action>
+
+		<action name="cons" method="consulta"
+			class="action.ProductoAction">
+			<result name="ok">/listadoxcombo.jsp</result>
+		</action>
+
+		<action name="buscar" method="buscar"
+			class="action.ProductoAction">
+			<result name="ok">/crudproductos.jsp</result>
+		</action>
+
+		<action name="actPro" method="ActualizarPro"
+			class="action.ProductoAction">
+			<result name="ok">/crudproductos.jsp</result>
+		</action>
+
+		<action name="eliPro" method="EliminarPro"
+			class="action.ProductoAction">
+			<result name="ok">/crudproductos.jsp</result>
+		</action>
+
+		<action name="regPro" method="RegistrarPro"
+			class="action.ProductoAction">
+			<result name="ok">/crudproductos.jsp</result>
+		</action>
+
+		<action name="borra" method="EliminarPro"
+			class="action.ProductoAction">
+			<result name="ok">/listadoxcombo.jsp</result>
+
+		</action>
+
+	</package>
+
+</struts>

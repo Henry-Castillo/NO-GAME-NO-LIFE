@@ -1,0 +1,97 @@
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.mapper.ProductoMapper">
+
+	<select id="listado" resultType="model.Producto">
+		select * from tb_productos
+	</select>
+
+
+
+	<select id="ReporteGrafico2" resultType="model.Grafico2">
+
+		select c.descripcion as
+		categoria, count(*) as cantidad
+		from tb_productos as p
+		inner join
+		tb_categorias as c
+		on p.idcategoria=c.idcategoria
+		group by categoria
+	</select>
+	
+	<select id="ReporteGrafico" resultType="model.Grafico">
+
+		select p.idprod,
+		p.descripcion, p.stock, p.precio, c.idcategoria,
+		c.descripcion as
+		categoria
+		from tb_productos as p
+		inner join
+		tb_categorias as c
+		on
+		p.idcategoria=c.idcategoria
+	</select>
+
+	<select id="ListadoCarreras" resultType="model.Producto">
+		select * from
+		tb_productos where idcategoria = 1
+	</select>
+
+	<select id="ListadoGuerra" resultType="model.Producto">
+		select * from tb_productos
+		where idcategoria = 2
+	</select>
+
+	<select id="ListadoFantasia" resultType="model.Producto">
+		select * from
+		tb_productos where idcategoria = 3
+	</select>
+
+	<select id="ListadoFutbol" resultType="model.Producto">
+		select * from tb_productos
+		where idcategoria = 4
+	</select>
+
+	<select id="listadoPro" resultType="model.Producto"
+		parameterType="model.Producto">
+
+		select * from tb_productos where idcategoria =
+		#{idcategoria}
+
+	</select>
+
+	<select id="obtener" parameterType="String"
+		resultType="model.Producto">
+
+		select * from tb_productos where idprod = #{codigo}
+
+	</select>
+
+	<update id="ActualizarPro" parameterType="model.Producto">
+		update tb_productos set
+		descripcion=#{descripcion}, stock =#{stock},
+		precio=#{stock}, precio
+		=#{precio},idcategoria=#{idcategoria}, estado=#{estado} where
+		idprod
+		=#{idprod}
+	</update>
+
+	<update id="EliminarPro" parameterType="String">
+
+		update tb_productos set
+		estado = 0, stock = 0 where idprod =#{id}
+	</update>
+
+	<insert id="RegistrarPro" parameterType="model.Producto">
+
+		insert into tb_productos
+		values
+		(#{idprod},#{descripcion},#{stock},#{precio},#{idcategoria},#{estado})
+
+	</insert>
+
+
+
+</mapper>

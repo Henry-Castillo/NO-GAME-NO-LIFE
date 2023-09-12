@@ -1,0 +1,148 @@
+@charset "ISO-8859-1";
+	*{
+	margin: 0;
+	padding: 0;
+}
+
+
+header {
+  		background: rgba(0,0,0,0.9);
+  		width: 100%;
+  		height:80px;
+  		position: fixed;
+  		top:0;
+  		left:0;
+  		z-index:100 ;
+	}
+	nav {
+  		float: left; /* Desplazamos el nav hacia la izquierda */
+	}
+ 
+	nav ul {
+  		list-style: none;
+  		overflow: hidden; /* Limpiamos errores de float */
+ 	}
+ 
+	nav ul li {
+  		float: left;
+  		font-family: Arial, sans-serif;
+  		font-size: 16px;
+  
+	}
+ 
+	nav ul li #letra{
+  		display: block; 
+  		padding-left: 24px;
+  		padding-right: 20px;
+  		padding-top: 30px;
+  		color:  #0cf78b;
+  		text-decoration: none;
+	}
+	
+
+	
+	nav ul #linav:hover {
+		height: 8px;
+   		bottom:0px;
+  		background:#bf15e3;
+  		/*position: absolute;*/
+	}
+	
+
+	
+	#navlogin{
+		padding-bottom:50px;
+		height:40px;
+        padding-top: 20px; 
+        margin-left: 5px;
+	}
+	
+	#imglogin{
+		width: 42px;
+		height: 42px;
+		margin-left: 10px;
+		overflow: auto;
+		
+	}
+	
+	#navlogo{
+		padding-bottom:15px;
+		height:80px;
+        padding-top: 15px;
+        margin-left: 60px;
+        
+        
+	}
+
+	#imglogo{
+		width: 190px;
+		height: 50px;
+		margin-right:20px;
+		padding-top: 2px;
+	}
+
+
+	#usu{
+		color: #0cf78b;
+		margin-left: 10px;
+		padding-bottom:50px;
+		margin-top: 30px;
+	}
+
+	#slider{
+		width:100%; 
+		height:420px; 
+		float:left;
+	}
+	
+	.contenido {
+  		padding-top: 80px;
+	}
+
+	.wrapper {
+  		width: 80%;
+ 		margin: auto;
+  		overflow:hidden;
+	}
+	
+	body {
+		background-color: #121212;
+		/*background-image: url("https://stmed.net/sites/default/files/uncharted%3A-the-lost-legacy-hd-wallpapers-33862-9801043.jpg");*/
+	}
+	
+	#contenedor {
+	width: 90%;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+ 
+	}
+	
+ 
+
+	
+	footer {
+		padding: 10px;
+		text-align: center;
+		background-color: black;
+		
+	}
+	
+	footer p {
+		
+		margin-bottom: 10px;
+		color: white;
+	}
+	
+	footer img {
+		margin-left: 10px;
+		margin-right: 10px;
+		width: 60px;
+		height: auto;
+	}
+	
+
+
+
+
+
